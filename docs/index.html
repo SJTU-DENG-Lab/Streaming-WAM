@@ -14,7 +14,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <title>Streaming-WAM — Streaming World-Action Models</title>
-    <link rel="stylesheet" href="styles.css?v=20260907-3">
+    <link rel="stylesheet" href="styles.css?v=20260907-4">
     <script src="script.js?v=20260827-20" defer></script>
   </head>
   <body>
@@ -151,7 +151,8 @@
           <div class="rollout-showcase-heading">
             <h2 id="real-robot-demo-title">From synchronous inference to streaming control.</h2>
           </div>
-          <div class="rollout-demo-grid">
+          <p class="rollout-task-title" id="stamp-paper-demo-title">Stamp paper</p>
+          <div class="rollout-demo-grid" aria-labelledby="stamp-paper-demo-title">
             <article class="rollout-demo-card">
               <div class="real-robot-player">
                 <video class="real-robot-video" controls preload="none" playsinline poster="assets/real-robot/joint-wam.jpg?v=joint-full-20260830" width="640" height="720" aria-label="Joint WAM real robot rollout from two vertically stacked synchronized camera views">
@@ -193,11 +194,59 @@
               <div class="rollout-demo-caption">
                 <h3>Streaming-WAM <small>Ours</small></h3>
                 <div class="rollout-demo-result">
-                  <p class="rollout-demo-metrics"><span>Chunk Time <strong>122.62 ms</strong></span><span>Total Time <strong>38 s</strong></span></p>
+                  <p class="rollout-demo-metrics"><span>Chunk Time <strong>122.6 ms</strong></span><span>Total Time <strong>38 s</strong></span></p>
                   <p class="rollout-demo-speedup" aria-label="5.6 times faster Chunk Time and 2.4 times faster Total Time than Joint WAM"><strong>5.6×</strong> Chunk <span>·</span> <strong>2.4×</strong> Total</p>
                 </div>
               </div>
               <noscript><a href="assets/real-robot/streaming-wam.mp4?v=streaming-side-20260831">Open the Streaming-WAM rollout</a></noscript>
+            </article>
+          </div>
+          <p class="rollout-task-title" id="block-demo-title">Block manipulation</p>
+          <div class="rollout-demo-grid" aria-labelledby="block-demo-title">
+            <article class="rollout-demo-card">
+              <div class="real-robot-player">
+                <video class="real-robot-video" controls preload="none" playsinline poster="assets/real-robot/block/joint-wam.jpg?v=demo2-corrected-20260907" width="640" height="720" aria-label="Joint WAM block manipulation rollout from two vertically stacked camera views">
+                  <source data-src="assets/real-robot/block/joint-wam.mp4?v=demo2-corrected-20260907" type="video/mp4">
+                </video>
+                <button class="real-robot-load" type="button" aria-label="Play the Joint WAM block manipulation rollout"><span class="sr-only">Play the Joint WAM block rollout</span></button>
+                <div class="real-robot-view-labels" aria-hidden="true"><span>View 1</span><span>View 2</span></div>
+              </div>
+              <div class="rollout-demo-caption">
+                <h3>Joint WAM</h3>
+                <p class="rollout-demo-metrics"><span>Chunk Time <strong>616.3 ms</strong></span><span>Total Time <strong>60 s</strong></span></p>
+              </div>
+              <noscript><a href="assets/real-robot/block/joint-wam.mp4?v=demo2-corrected-20260907">Open the Joint WAM block rollout</a></noscript>
+            </article>
+            <article class="rollout-demo-card">
+              <div class="real-robot-player">
+                <video class="real-robot-video" controls preload="none" playsinline poster="assets/real-robot/block/distilled-wam-1v2a.jpg?v=demo2-20260907" width="640" height="720" aria-label="Distilled WAM 1V2A block manipulation rollout from two vertically stacked camera views">
+                  <source data-src="assets/real-robot/block/distilled-wam-1v2a.mp4?v=demo2-20260907" type="video/mp4">
+                </video>
+                <button class="real-robot-load" type="button" aria-label="Play the Distilled WAM 1V2A block manipulation rollout"><span class="sr-only">Play the Distilled WAM 1V2A block rollout</span></button>
+                <div class="real-robot-view-labels" aria-hidden="true"><span>View 1</span><span>View 2</span></div>
+              </div>
+              <div class="rollout-demo-caption">
+                <h3>Distilled WAM <small>1V2A</small></h3>
+                <p class="rollout-demo-metrics"><span>Chunk Time <strong>143.7 ms</strong></span><span>Total Time <strong>31 s</strong></span></p>
+              </div>
+              <noscript><a href="assets/real-robot/block/distilled-wam-1v2a.mp4?v=demo2-20260907">Open the Distilled WAM 1V2A block rollout</a></noscript>
+            </article>
+            <article class="rollout-demo-card rollout-demo-card-stream">
+              <div class="real-robot-player">
+                <video class="real-robot-video" controls preload="none" playsinline poster="assets/real-robot/block/streaming-wam.jpg?v=demo2-20260907" width="640" height="720" aria-label="Streaming-WAM block manipulation rollout from two vertically stacked camera views">
+                  <source data-src="assets/real-robot/block/streaming-wam.mp4?v=demo2-20260907" type="video/mp4">
+                </video>
+                <button class="real-robot-load" type="button" aria-label="Play the Streaming-WAM block manipulation rollout"><span class="sr-only">Play the Streaming-WAM block rollout</span></button>
+                <div class="real-robot-view-labels" aria-hidden="true"><span>View 1</span><span>View 2</span></div>
+              </div>
+              <div class="rollout-demo-caption">
+                <h3>Streaming-WAM <small>Ours</small></h3>
+                <div class="rollout-demo-result">
+                  <p class="rollout-demo-metrics"><span>Chunk Time <strong>113.2 ms</strong></span><span>Total Time <strong>26 s</strong></span></p>
+                  <p class="rollout-demo-speedup" aria-label="5.4 times faster Chunk Time and 2.3 times faster Total Time than Joint WAM"><strong>5.4×</strong> Chunk <span>·</span> <strong>2.3×</strong> Total</p>
+                </div>
+              </div>
+              <noscript><a href="assets/real-robot/block/streaming-wam.mp4?v=demo2-20260907">Open the Streaming-WAM block rollout</a></noscript>
             </article>
           </div>
         </div>
@@ -209,7 +258,7 @@
           <p class="tldr-lead"><strong>Streaming-WAM enables streaming world-action prediction for continuous robot control.</strong> Instead of waiting at each chunk boundary, the robot continues executing its current action chunk while a Stream Update prepares the next video and action chunks in the background.</p>
           <div class="tldr-points">
             <p><strong>An action-conditioned World-Action Model keeps prediction aligned with execution.</strong> Shared actions directly condition the next visual prediction, allowing the model to anticipate the visual consequences of the motion already underway and produce smoother transitions between consecutive chunks.</p>
-            <p><strong>Streaming-WAM delivers strong task performance with shorter end-to-end rollouts.</strong> Compared with FastWAM on LIBERO, it achieves 98.35% average success with 3.0× and 2.6× Total Time speedups on Long and Short tasks, respectively, together with a 12.0× Chunk Time speedup. On RoboTwin 2.0, it improves total success by 4.74 percentage points, from 87.0 to 91.74 over FastWAM-Joint, while delivering a 1.4× Total Time speedup and a 12.0× Chunk Time speedup. On the real robot, it reduces Total Time from 90 s to 38 s (2.4× faster) and achieves a 5.6× Chunk Time speedup.</p>
+            <p><strong>Streaming-WAM delivers strong task performance with shorter end-to-end rollouts.</strong> Compared with FastWAM on LIBERO, it achieves 98.35% average success with 3.0× and 2.6× Total Time speedups on Long and Short tasks, respectively, together with a 12.0× Chunk Time speedup. On RoboTwin 2.0, it improves total success by 4.74 percentage points, from 87.0 to 91.74 over FastWAM-Joint, while delivering a 1.4× Total Time speedup and a 12.0× Chunk Time speedup. On the real robot Stamp paper task, it reduces Total Time from 90 s to 38 s (2.4× faster) and achieves a 5.6× Chunk Time speedup. On Block manipulation, it completes the rollout in 26 s versus 60 s for Joint WAM, with 96.67% success versus 100.00%.</p>
           </div>
           <p class="tldr-summary">Below, we share several practical findings and design details behind efficient streaming world-action prediction.</p>
         </div>
@@ -271,7 +320,7 @@
           </div>
           <figure class="method-figure breakout" id="streamingwam-method-figure" aria-describedby="streamingwam-method-description streamingwam-method-caption">
             <div class="method-figure-viewport" role="group" aria-label="Scrollable Streaming-WAM method timeline" tabindex="0">
-              <img class="method-figure-artwork" src="assets/streaming-wam-method.svg?v=20260907-2" alt="" width="1600" height="740">
+              <img class="method-figure-artwork" src="assets/streaming-wam-method.svg?v=20260907-6" alt="" width="1600" height="704">
             </div>
             <p class="sr-only" id="streamingwam-method-description">A method diagram showing model updates overlapped with continuous robot execution. Shared actions connect the current and incoming chunks, enter both the action and condition paths, and condition future visual prediction through directed attention.</p>
             <figcaption id="streamingwam-method-caption">Streaming-WAM overlaps each new visual and action prediction with ongoing robot execution. Shared actions bridge adjacent chunks and condition the next joint prediction.</figcaption>
@@ -362,16 +411,23 @@
           <section class="benchmark breakout" id="benchmark-real-robot" aria-labelledby="real-robot-title">
             <div class="benchmark-intro">
               <h3 id="real-robot-title">Real robot evaluation</h3>
-              <p>We evaluate standard Joint WAM inference, its distilled 1V2A variant, and Streaming-WAM over 30 trials per method on the same real robot manipulation task using a single NVIDIA GeForce RTX 5090 at a 30 Hz control frequency. Streaming-WAM succeeds in 27 of 30 trials (90.00%), reduces Chunk Time to 122.62 ms, and completes the rollout in 38 s.</p>
+              <p>We evaluate standard Joint WAM inference, its distilled 1V2A variant, and Streaming-WAM over 30 trials per method on each real robot task: Stamp paper and Block manipulation. The Stamp paper setup uses a single NVIDIA GeForce RTX 5090 at a 30 Hz control frequency. Streaming-WAM succeeds in 27 of 30 Stamp paper trials (90.00%) and 29 of 30 Block manipulation trials (96.67%). Relative to Joint WAM, it reduces Chunk Time by 5.6× and 5.4×, and Total Time by 2.4× and 2.3×, respectively. On Block manipulation, Joint WAM achieves the highest success rate (100.00%), while Streaming-WAM completes the rollout in 26 s versus 60 s.</p>
             </div>
             <div class="table-scroll" tabindex="0" aria-label="Scrollable real robot evaluation table">
               <table>
                 <caption>Real robot inference, rollout time, and task success</caption>
                 <thead><tr><th scope="col">Method</th><th scope="col">Chunk Time ↓</th><th scope="col">Total Time ↓</th><th scope="col">Successes</th><th scope="col">Success Rate ↑</th></tr></thead>
                 <tbody>
+                  <tr class="real-robot-task-row"><th scope="rowgroup" colspan="5">Stamp paper</th></tr>
                   <tr><th scope="row">Joint WAM</th><td>682.1 ms</td><td>90 s</td><td>26 / 30</td><td>86.67%</td></tr>
                   <tr><th scope="row">Distilled WAM (1V2A)</th><td>150.3 ms</td><td>61 s</td><td>17 / 30</td><td>56.67%</td></tr>
-                  <tr><th scope="row">Streaming-WAM (Ours)</th><td><strong>122.62 ms</strong></td><td><strong>38 s</strong></td><td><strong>27 / 30</strong></td><td><strong>90.00%</strong></td></tr>
+                  <tr><th scope="row">Streaming-WAM (Ours)</th><td><strong>122.6 ms</strong></td><td><strong>38 s</strong></td><td><strong>27 / 30</strong></td><td><strong>90.00%</strong></td></tr>
+                </tbody>
+                <tbody>
+                  <tr class="real-robot-task-row"><th scope="rowgroup" colspan="5">Block manipulation</th></tr>
+                  <tr><th scope="row">Joint WAM</th><td>616.3 ms</td><td>60 s</td><td><strong>30 / 30</strong></td><td><strong>100.00%</strong></td></tr>
+                  <tr><th scope="row">Distilled WAM (1V2A)</th><td>143.7 ms</td><td>31 s</td><td>23 / 30</td><td>76.67%</td></tr>
+                  <tr><th scope="row">Streaming-WAM (Ours)</th><td><strong>113.2 ms</strong></td><td><strong>26 s</strong></td><td>29 / 30</td><td>96.67%</td></tr>
                 </tbody>
               </table>
             </div>

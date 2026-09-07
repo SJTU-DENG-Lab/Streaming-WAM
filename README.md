@@ -21,8 +21,10 @@ Compared with FastWAM on LIBERO, Streaming-WAM achieves 98.35% average success
 with 3.0× and 2.6× Total Time speedups on Long and Short tasks, respectively,
 together with a 12.0× Chunk Time speedup. On RoboTwin 2.0, it improves total
 success by 4.74 percentage points, from 87.0 to 91.74 over FastWAM-Joint, while delivering a 1.4× Total Time
-speedup and a 12.0× Chunk Time speedup. On the real robot, it reduces Total Time
+speedup and a 12.0× Chunk Time speedup. On the real robot Stamp paper task, it reduces Total Time
 from 90 s to 38 s (2.4× faster) and achieves a 5.6× Chunk Time speedup.
+On Block manipulation, it completes the rollout in 26 s versus 60 s for Joint WAM,
+with 96.67% success versus 100.00%.
 
 Below, we share several practical findings and design details behind efficient
 streaming world-action prediction.
@@ -150,13 +152,23 @@ RoboCasa follows the standard 24-task protocol, with 50 trials per kitchen manip
 
 #### Real robot evaluation
 
-We evaluate standard Joint WAM inference, its distilled 1V2A variant, and Streaming-WAM over 30 trials per method on the same real robot manipulation task using a single NVIDIA GeForce RTX 5090 at a 30 Hz control frequency. Streaming-WAM succeeds in 27 of 30 trials (90.00%), reduces Chunk Time to 122.62 ms, and completes the rollout in 38 s.
+We evaluate standard Joint WAM inference, its distilled 1V2A variant, and Streaming-WAM over 30 trials per method on each real robot task: Stamp paper and Block manipulation. The Stamp paper setup uses a single NVIDIA GeForce RTX 5090 at a 30 Hz control frequency. Streaming-WAM succeeds in 27 of 30 Stamp paper trials (90.00%) and 29 of 30 Block manipulation trials (96.67%). Relative to Joint WAM, it reduces Chunk Time by 5.6× and 5.4×, and Total Time by 2.4× and 2.3×, respectively. On Block manipulation, Joint WAM achieves the highest success rate (100.00%), while Streaming-WAM completes the rollout in 26 s versus 60 s.
+
+**Stamp paper**
 
 | Method | Chunk Time | Total Time | Successes | Success Rate ↑ |
 |---|---:|---:|---:|---:|
 | Joint WAM | 682.1 ms | 90 s | 26 / 30 | 86.67% |
 | Distilled WAM (1V2A) | 150.3 ms | 61 s | 17 / 30 | 56.67% |
-| Streaming-WAM (Ours) | **122.62 ms** | **38 s** | **27 / 30** | **90.00%** |
+| Streaming-WAM (Ours) | **122.6 ms** | **38 s** | **27 / 30** | **90.00%** |
+
+**Block manipulation**
+
+| Method | Chunk Time | Total Time | Successes | Success Rate ↑ |
+|---|---:|---:|---:|---:|
+| Joint WAM | 616.3 ms | 60 s | **30 / 30** | **100.00%** |
+| Distilled WAM (1V2A) | 143.7 ms | 31 s | 23 / 30 | 76.67% |
+| Streaming-WAM (Ours) | **113.2 ms** | **26 s** | 29 / 30 | 96.67% |
 
 ### Inference efficiency
 

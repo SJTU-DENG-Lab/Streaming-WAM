@@ -60,15 +60,76 @@ def test_streaming_rollout_uses_the_new_side_view_and_remains_click_to_load() ->
     assert f'<source src="{video_token}"' not in page
 
 
-def test_real_robot_demo_only_shows_three_evaluated_methods() -> None:
+def test_real_robot_demo_shows_three_evaluated_methods_per_task() -> None:
     page = PAGE.read_text(encoding="utf-8")
     demo = page.split('id="real-robot-demo"', 1)[1].split('</section>', 1)[0]
-    assert demo.count('<video ') == 3
+    assert demo.count('<video ') == 6
+    assert demo.count('class="rollout-demo-grid"') == 2
     assert "1V10A" not in page
     assert "assets/real-robot/distilled-wam.mp4" not in page
     assert "assets/real-robot/distilled-wam.jpg" not in page
     for method in ("joint-wam", "distilled-wam-1v2a", "streaming-wam"):
         assert f"assets/real-robot/{method}.mp4" in demo
+        version = "demo2-corrected-20260907" if method == "joint-wam" else "demo2-20260907"
+        token = f"assets/real-robot/block/{method}.mp4?v={version}"
+        assert f'<source data-src="{token}" type="video/mp4">' in demo
+        assert f'<source src="{token}"' not in demo
+    assert 'id="stamp-paper-demo-title"' in demo
+    assert 'id="block-demo-title"' in demo
+
+
+def test_block_results_are_consistent_across_blog_and_readme() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    readme = README.read_text(encoding="utf-8")
+    section = page.split('id="benchmark-real-robot"', 1)[1].split('class="efficiency-intro', 1)[0]
+    assert section.count('scope="rowgroup" colspan="5"') == 2
+    assert '<td>616.3 ms</td><td>60 s</td><td><strong>30 / 30</strong></td><td><strong>100.00%</strong></td>' in section
+    assert '<td>143.7 ms</td><td>31 s</td><td>23 / 30</td><td>76.67%</td>' in section
+    assert '<td><strong>113.2 ms</strong></td><td><strong>26 s</strong></td><td>29 / 30</td><td>96.67%</td>' in section
+    assert '| Joint WAM | 616.3 ms | 60 s | **30 / 30** | **100.00%** |' in readme
+    assert '| Distilled WAM (1V2A) | 143.7 ms | 31 s | 23 / 30 | 76.67% |' in readme
+    assert '| Streaming-WAM (Ours) | **113.2 ms** | **26 s** | 29 / 30 | 96.67% |' in readme
+    for content in (section, readme):
+        assert 'Joint WAM achieves the highest success rate (100.00%)' in content
+        assert '5.6× and 5.4×' in content
+        assert '2.4× and 2.3×' in content
+    for content in (page, readme):
+        assert '122.62' not in content
+        assert '117.2 ms' not in content
+        assert '5.3×' not in content
+    assert page.count('Chunk Time <strong>122.6 ms</strong>') == 1
+    assert page.count('Chunk Time <strong>113.2 ms</strong>') == 1
+    assert '5.4 times faster Chunk Time' in page
+
+
+def test_demo2_media_matches_the_original_vertical_video_format() -> None:
+    for method, source, duration in (
+        ('joint-wam', 'block-joint', 60),
+        ('distilled-wam-1v2a', 'block-1v2a', 31),
+        ('streaming-wam', 'block-1v2a-rtc', 26),
+    ):
+        video = ROOT / 'docs/assets/real-robot/block' / f'{method}.mp4'
+        manifest = json.loads(video.with_suffix('.json').read_text())
+        assert manifest['layout'] == 'vertical'
+        assert manifest['playback_speed'] == 1.0
+        assert manifest['duration_seconds'] == duration
+        source_dir = 'demo2' if method == 'joint-wam' else 'demo2.rar'
+        assert [view['source'] for view in manifest['views']] == [f'{source_dir}/{source}-{i}.mp4' for i in (1, 2)]
+        if method == 'joint-wam':
+            assert manifest['views'][1]['source_sha256'] == 'd9ce97f62e68060c01e8cc4d31b1a009c06d79d58f4a0f1883e87d9d3469000e'
+        assert [view['start_seconds'] for view in manifest['views']] == [0.0, 0.0]
+        assert hashlib.sha256(video.read_bytes()).hexdigest() == manifest['output_sha256']
+        assert hashlib.sha256(video.with_suffix('.jpg').read_bytes()).hexdigest() == manifest['poster_sha256']
+        media = json.loads(subprocess.check_output([
+            'ffprobe', '-v', 'error', '-show_streams', '-show_entries',
+            'format=duration', '-of', 'json', str(video),
+        ], text=True))
+        stream = media['streams'][0]
+        assert stream['codec_name'] == 'h264'
+        assert stream['pix_fmt'] == 'yuv420p'
+        assert (stream['width'], stream['height']) == (640, 720)
+        assert stream['r_frame_rate'] == '24/1'
+        assert abs(float(media['format']['duration']) - duration) < 0.05
 
 
 def test_real_robot_table_combines_timing_and_30_trial_success_results() -> None:
@@ -98,7 +159,7 @@ def test_real_robot_table_combines_timing_and_30_trial_success_results() -> None
     readme_section = readme.split("#### Real robot evaluation", 1)[1].split("### Inference efficiency", 1)[0]
     assert "1V10A" not in readme_section
     assert "| Distilled WAM (1V2A) | 150.3 ms | 61 s | 17 / 30 | 56.67% |" in readme
-    assert "| Streaming-WAM (Ours) | **122.62 ms** | **38 s** | **27 / 30** | **90.00%** |" in readme
+    assert "| Streaming-WAM (Ours) | **122.6 ms** | **38 s** | **27 / 30** | **90.00%** |" in readme
 
 
 def test_libero_optimization_chart_shows_cumulative_effective_cycle_speedups() -> None:

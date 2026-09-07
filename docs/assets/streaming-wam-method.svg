@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 740" role="img" aria-labelledby="streamingwam-method-title streamingwam-method-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 704" role="img" aria-labelledby="streamingwam-method-title streamingwam-method-desc">
 <title id="streamingwam-method-title">Streaming-WAM streaming overview, temporal overlap, and action-conditioned attention</title>
 <desc id="streamingwam-method-desc">Consecutive Stream Updates overlap continuous robot execution. Shared actions enter both the fixed action prefix and an independent condition stream. The cross-chunk matrix is a conceptual overview, not an exact implementation mask. Its two highlighted gold cells lead to a condition-path detail: known condition queries read z0 and known slots, while unknown condition queries read z0 and all condition slots. For z1, visual attention and condition attention are separately normalized and then added. The complete policy routing is omitted from this detail.</desc>
 <defs>
@@ -37,18 +37,18 @@ text{font-family:Calibri,sans-serif!important}
 .anchor-end{text-anchor:end}.anchor-start{text-anchor:start}.secondary rect,.secondary path{opacity:.74}
 </style>
 </defs>
-<rect x="0" y="0" width="1600" height="740" fill="#ffffff"/>
+<rect x="0" y="0" width="1600" height="704" fill="#ffffff"/>
 <g id="global-overview">
 <text class="title" x="58" y="25">Streaming overview</text>
 <g id="time-axis">
 <path d="M70 64 H1538" class="axis" marker-end="url(#arrow-gray)"/>
-<line id="time-t0" class="landmark" x1="170" y1="52" x2="170" y2="290"/>
+<line id="time-t0" class="landmark" x1="170" y1="52" x2="170" y2="274"/>
 <text class="time" x="170" y="44">t₀</text>
-<line id="time-t1" class="landmark" x1="650" y1="52" x2="650" y2="290"/>
+<line id="time-t1" class="landmark" x1="650" y1="52" x2="650" y2="274"/>
 <text class="time" x="650" y="44">t₁</text>
-<line id="time-t2" class="landmark" x1="1050" y1="52" x2="1050" y2="290"/>
+<line id="time-t2" class="landmark" x1="1050" y1="52" x2="1050" y2="274"/>
 <text class="time" x="1050" y="44">t₂</text>
-<line id="time-t3" class="landmark" x1="1450" y1="52" x2="1450" y2="290"/>
+<line id="time-t3" class="landmark" x1="1450" y1="52" x2="1450" y2="274"/>
 <text class="time" x="1450" y="44">t₃</text>
 </g>
 <g id="overview-source-icons">
@@ -119,11 +119,11 @@ text{font-family:Calibri,sans-serif!important}
 <rect x="1450" y="218" width="70" height="42" id="overview-execution-2" rx="3" fill="#dcece7" stroke="#397c73"/>
 <text class="mono ellipsis" x="1538" y="245">···</text>
 </g>
-<rect x="670" y="92" width="370" height="179" id="inset-selection" rx="5" fill="none" stroke="#a66f12" stroke-width="1.2" stroke-dasharray="5 5"/>
-<path d="M1040 271 L1120 320 L1120 345" id="inset-callout" class="callout"/>
+<rect x="1070" y="92" width="370" height="179" id="inset-selection" rx="5" fill="none" stroke="#a66f12" stroke-width="1.2" stroke-dasharray="5 5"/>
+<path d="M1070 271 L1015 291.5 L1015 309" id="inset-callout" class="callout"/>
 </g>
-<path d="M58 315 H1540" class="guide"/>
-<g id="detail-inset">
+<path d="M58 291.5 H1540" class="guide"/>
+<g id="detail-inset" transform="translate(0 -36)">
 <rect x="58" y="345" width="1462" height="355" id="detail-inset-frame" rx="5" fill="#fffefa" stroke="#9ca39f" stroke-width="1.1"/>
 <rect x="86" y="362" width="761" height="325" id="temporal-overlap-panel" fill="none"/>
 <rect x="918" y="362" width="582" height="325" id="attention-panel" fill="none"/>
@@ -144,7 +144,7 @@ text{font-family:Calibri,sans-serif!important}
 
 <path d="M367.5 460 V473.333" id="shared-to-embeddings" class="connector"/>
 <text class="small anchor-start" x="384" y="468.333">embeddings</text>
-<path d="M367.5 446 V460 H214 V653.334 H293" id="shared-actions-carryover" class="connector"/>
+<path d="M367.5 446 V460 H214 V661.58 H293" id="shared-actions-carryover" class="connector"/>
 <text class="gold-label anchor-end" x="204" y="537.333">Aₜ[8:16] = Aₜ₊₁[0:8]</text>
 
 <rect x="300" y="480.333" width="135" height="40" id="inset-shared-action-slots" rx="3" fill="#f7dada" stroke="#dc8f8f" stroke-width="1.2"/>
@@ -167,11 +167,11 @@ text{font-family:Calibri,sans-serif!important}
 <rect x="570" y="577.334" width="270" height="42" id="inset-z2" rx="3" fill="#dfe9f7" stroke="#4e6f9b"/>
 <text class="mono box-text" x="705" y="603.334">Z₂</text>
 
-<text class="mono" x="110" y="658.334">Aₜ₊₁</text>
-<rect x="300" y="632.334" width="135" height="42" id="inset-a1-action-prefix" rx="3" fill="#f2dfad" stroke="#a97920"/>
-<text class="gold-label box-text" x="367.5" y="658.334">shared actions</text>
-<rect x="435" y="632.334" width="405" height="42" id="inset-a1-postfix" rx="3" fill="#dcece7" stroke="#397c73"/>
-<text class="small box-text" x="637.5" y="658.334">postfix actions</text>
+<text class="mono" x="110" y="666.58">Aₜ₊₁</text>
+<rect x="300" y="640.58" width="135" height="42" id="inset-a1-action-prefix" rx="3" fill="#f2dfad" stroke="#a97920"/>
+<text class="gold-label box-text" x="367.5" y="666.58">shared actions</text>
+<rect x="435" y="640.58" width="405" height="42" id="inset-a1-postfix" rx="3" fill="#dcece7" stroke="#397c73"/>
+<text class="small box-text" x="637.5" y="666.58">postfix actions</text>
 </g>
 <text class="section" x="925" y="382">Action-conditioned attention</text>
 <text id="cross-chunk-overview-title" class="small anchor-start" x="925" y="400" style="font-size:14px">Cross-chunk interaction</text>

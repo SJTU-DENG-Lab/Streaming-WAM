@@ -1,0 +1,21 @@
+{
+  "layout": "vertical",
+  "duration_seconds": 31,
+  "playback_speed": 1.0,
+  "views": [
+    {
+      "position": "top",
+      "source": "demo2.rar/block-1v2a-1.mp4",
+      "source_sha256": "ce6f82a786aded835721b55e9bb9234e3613d0694d0f98c48a38b9268426c87d",
+      "start_seconds": 0.0
+    },
+    {
+      "position": "bottom",
+      "source": "demo2.rar/block-1v2a-2.mp4",
+      "source_sha256": "34dc553dc9beecca287a0c58ada0c6a5b85ee87e3beb7910961ab5ed59f85783",
+      "start_seconds": 0.0
+    }
+  ],
+  "output_sha256": "d4a87e77fdb6593a08cc5c71274c5447976fe7993e8063fe8903d63a1a119ead",
+  "poster_sha256": "a28a796ba3691f98be9587841f202dbe971c9aeb95d214478865f86eedc86feb"
+}
