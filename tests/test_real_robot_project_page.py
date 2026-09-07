@@ -60,6 +60,17 @@ def test_streaming_rollout_uses_the_new_side_view_and_remains_click_to_load() ->
     assert f'<source src="{video_token}"' not in page
 
 
+def test_real_robot_demo_only_shows_three_evaluated_methods() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    demo = page.split('id="real-robot-demo"', 1)[1].split('</section>', 1)[0]
+    assert demo.count('<video ') == 3
+    assert "1V10A" not in page
+    assert "assets/real-robot/distilled-wam.mp4" not in page
+    assert "assets/real-robot/distilled-wam.jpg" not in page
+    for method in ("joint-wam", "distilled-wam-1v2a", "streaming-wam"):
+        assert f"assets/real-robot/{method}.mp4" in demo
+
+
 def test_real_robot_table_combines_timing_and_30_trial_success_results() -> None:
     page = PAGE.read_text(encoding="utf-8")
     readme = README.read_text(encoding="utf-8")
