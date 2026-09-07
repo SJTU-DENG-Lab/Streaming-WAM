@@ -148,9 +148,9 @@ text{font-family:Calibri,sans-serif!important}
 <text class="gold-label anchor-end" x="204" y="537.333">Aₜ[8:16] = Aₜ₊₁[0:8]</text>
 
 <rect x="300" y="480.333" width="135" height="40" id="inset-shared-action-slots" rx="3" fill="#f7dada" stroke="#dc8f8f" stroke-width="1.2"/>
-<text class="small box-text" x="367.5" y="505.333">known slots C<tspan baseline-shift="sub" font-size="70%">K</tspan></text>
+<text class="small box-text" x="367.5" y="505.333">known slots C<tspan baseline-shift="-2px" font-size="70%">K</tspan></text>
 <rect x="435" y="480.333" width="135" height="40" id="inset-unknown-slots" rx="3" fill="url(#unknown-slots-hatch)" stroke="#c6cbc8" stroke-width="1.1"/>
-<text class="small box-text" x="502.5" y="505.333">unknown slots C<tspan baseline-shift="sub" font-size="70%">U</tspan></text>
+<text class="small box-text" x="502.5" y="505.333">unknown slots C<tspan baseline-shift="-2px" font-size="70%">U</tspan></text>
 <text class="small anchor-start box-text" x="588" y="505.333" style="font-size:17px">condition stream</text>
 <path d="M251.5 577.334 V500.333 H293" id="z0-to-condition-slots" stroke="#b7bcb9" stroke-width="1.25" fill="none" marker-end="url(#arrow-light-gray)"/>
 
@@ -356,10 +356,10 @@ text{font-family:Calibri,sans-serif!important}
 <g id="condition-routing-detail" transform="translate(-24 -14)">
 <title>Condition-query routing: rows CK and CU; keys z0, CK and CU. One means allowed and zero means masked. CK reads z0 and CK; CU reads z0, CK and CU. Blue cells denote visual context, pink cells denote known-slot context, and the hatched CU-to-CU cell is allowed unknown-slot context, not a masked connection. This is a condition-stream submatrix, not the complete three-stream mask.</title>
 <text class="attention-token" x="1342" y="459" style="font-size:15px">Z₀</text>
-<text class="attention-token" x="1386" y="459" style="font-size:15px">C<tspan baseline-shift="sub" font-size="70%">K</tspan></text>
-<text class="attention-token" x="1430" y="459" style="font-size:15px">C<tspan baseline-shift="sub" font-size="70%">U</tspan></text>
-<text class="attention-token anchor-end" x="1316" y="486" style="font-size:15px">C<tspan baseline-shift="sub" font-size="70%">K</tspan></text>
-<text class="attention-token anchor-end" x="1316" y="522" style="font-size:15px">C<tspan baseline-shift="sub" font-size="70%">U</tspan></text>
+<text class="attention-token" x="1386" y="459" style="font-size:15px">C<tspan baseline-shift="-2px" font-size="70%">K</tspan></text>
+<text class="attention-token" x="1430" y="459" style="font-size:15px">C<tspan baseline-shift="-2px" font-size="70%">U</tspan></text>
+<text class="attention-token anchor-end" x="1316" y="486" style="font-size:15px">C<tspan baseline-shift="-2px" font-size="70%">K</tspan></text>
+<text class="attention-token anchor-end" x="1316" y="522" style="font-size:15px">C<tspan baseline-shift="-2px" font-size="70%">U</tspan></text>
 <rect id="condition-known-z0" data-query="CK" data-key="z0" data-allowed="1" x="1326" y="466" width="32" height="30" rx="2" class="attention-visual"/>
 <text class="small box-text" data-mask-value="1" x="1342" y="486" style="font-size:16px">1</text>
 <rect id="condition-known-known" data-query="CK" data-key="CK" data-allowed="1" x="1370" y="466" width="32" height="30" rx="2" fill="#f7dada" stroke="#dc8f8f" stroke-width="1"/>
@@ -381,7 +381,7 @@ text{font-family:Calibri,sans-serif!important}
 <text class="small box-text" x="1300" y="584" style="font-size:16px">Z₀, Z₁, Z₂</text>
 <rect id="residual-condition-branch" x="1372" y="544" width="104" height="50" rx="3" fill="#f2dfad" stroke="#a97920" stroke-width="1"/>
 <text class="small box-text" x="1424" y="564" style="font-size:15px;letter-spacing:-0.5px">Condition attn.</text>
-<text class="small box-text" x="1424" y="584" style="font-size:16px">C<tspan baseline-shift="sub" font-size="70%">K</tspan>, C<tspan baseline-shift="sub" font-size="70%">U</tspan></text>
+<text class="small box-text" x="1424" y="584" style="font-size:16px">C<tspan baseline-shift="-2px" font-size="70%">K</tspan>, C<tspan baseline-shift="-2px" font-size="70%">U</tspan></text>
 <path id="visual-branch-to-sum" d="M1300 594 V620 H1352" fill="none" stroke="#4e6f9b" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
 <path id="condition-branch-to-sum" d="M1424 594 V620 H1372" fill="none" stroke="#a66f12" stroke-width="1.5" marker-end="url(#arrow-gold)"/>
 <g id="condition-residual-sum">

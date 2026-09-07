@@ -286,7 +286,7 @@
           </div>
           <figure class="method-figure breakout" id="streamingwam-method-figure" aria-describedby="streamingwam-method-description streamingwam-method-caption">
             <div class="method-figure-viewport" role="group" aria-label="Scrollable Streaming-WAM method timeline" tabindex="0">
-              <img class="method-figure-artwork" src="assets/streaming-wam-method.svg?v=20260907-1" alt="" width="1600" height="740">
+              <img class="method-figure-artwork" src="assets/streaming-wam-method.svg?v=20260907-2" alt="" width="1600" height="740">
             </div>
             <p class="sr-only" id="streamingwam-method-description">A method diagram showing model updates overlapped with continuous robot execution. Shared actions connect the current and incoming chunks, enter both the action and condition paths, and condition future visual prediction through directed attention.</p>
             <figcaption id="streamingwam-method-caption">Streaming-WAM overlaps each new visual and action prediction with ongoing robot execution. Shared actions bridge adjacent chunks and condition the next joint prediction.</figcaption>
@@ -377,7 +377,7 @@
           <section class="benchmark breakout" id="benchmark-real-robot" aria-labelledby="real-robot-title">
             <div class="benchmark-intro">
               <h3 id="real-robot-title">Real robot evaluation</h3>
-              <p>We evaluate standard Joint WAM inference, its distilled 1V10A and 1V2A variants, and Streaming-WAM over 30 trials per method on the same real robot manipulation task using a single NVIDIA GeForce RTX 5090 at a 30 Hz control frequency. Streaming-WAM succeeds in 27 of 30 trials (90.00%), reduces Chunk Time to 122.62 ms, and completes the rollout in 38 s.</p>
+              <p>We evaluate standard Joint WAM inference, its distilled 1V2A variant, and Streaming-WAM over 30 trials per method on the same real robot manipulation task using a single NVIDIA GeForce RTX 5090 at a 30 Hz control frequency. Streaming-WAM succeeds in 27 of 30 trials (90.00%), reduces Chunk Time to 122.62 ms, and completes the rollout in 38 s.</p>
             </div>
             <div class="table-scroll" tabindex="0" aria-label="Scrollable real robot evaluation table">
               <table>
@@ -385,7 +385,6 @@
                 <thead><tr><th scope="col">Method</th><th scope="col">Chunk Time ↓</th><th scope="col">Total Time ↓</th><th scope="col">Successes</th><th scope="col">Success Rate ↑</th></tr></thead>
                 <tbody>
                   <tr><th scope="row">Joint WAM</th><td>682.1 ms</td><td>90 s</td><td>26 / 30</td><td>86.67%</td></tr>
-                  <tr><th scope="row">Distilled WAM (1V10A)</th><td>402.7 ms</td><td>60 s</td><td>19 / 30</td><td>63.33%</td></tr>
                   <tr><th scope="row">Distilled WAM (1V2A)</th><td>150.3 ms</td><td>61 s</td><td>17 / 30</td><td>56.67%</td></tr>
                   <tr><th scope="row">Streaming-WAM (Ours)</th><td><strong>122.62 ms</strong></td><td><strong>38 s</strong></td><td><strong>27 / 30</strong></td><td><strong>90.00%</strong></td></tr>
                 </tbody>
