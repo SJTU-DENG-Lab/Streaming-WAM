@@ -180,24 +180,24 @@ text{font-family:Calibri,sans-serif!important}
 <text class="attention-token" x="1133" y="420">Z₀</text>
 <text class="attention-token" x="1154" y="420">Z₁</text>
 <text class="attention-token" x="1175" y="420">Z₂</text>
-<text class="attention-token" x="1196" y="420">Aₛ</text>
+<text class="attention-token" x="1196" y="420">A<tspan baseline-shift="-2px" font-size="70%">c</tspan></text>
 <text class="attention-token" x="1217" y="420">Aₚ</text>
 <text class="attention-token" x="1242" y="420">Z₀</text>
 <text class="attention-token" x="1263" y="420">Z₁</text>
 <text class="attention-token" x="1284" y="420">Z₂</text>
-<text class="attention-token" x="1305" y="420">Aₛ</text>
+<text class="attention-token" x="1305" y="420">A<tspan baseline-shift="-2px" font-size="70%">c</tspan></text>
 <text class="attention-token" x="1326" y="420">Aₚ</text>
 </g>
 <g id="attention-row-labels">
 <text class="attention-token anchor-end" x="1111" y="444">Z₀</text>
 <text class="attention-token anchor-end" x="1111" y="465">Z₁</text>
 <text class="attention-token anchor-end" x="1111" y="486">Z₂</text>
-<text class="attention-token anchor-end" x="1111" y="507">Aₛ</text>
+<text class="attention-token anchor-end" x="1111" y="507">A<tspan baseline-shift="-2px" font-size="70%">c</tspan></text>
 <text class="attention-token anchor-end" x="1111" y="528">Aₚ</text>
 <text class="attention-token anchor-end" x="1111" y="553">Z₀</text>
 <text class="attention-token anchor-end" x="1111" y="574">Z₁</text>
 <text class="attention-token anchor-end" x="1111" y="595">Z₂</text>
-<text class="attention-token anchor-end" x="1111" y="616">Aₛ</text>
+<text class="attention-token anchor-end" x="1111" y="616">A<tspan baseline-shift="-2px" font-size="70%">c</tspan></text>
 <text class="attention-token anchor-end" x="1111" y="637">Aₚ</text>
 </g>
 <g id="streamingwam-attention-mask">
