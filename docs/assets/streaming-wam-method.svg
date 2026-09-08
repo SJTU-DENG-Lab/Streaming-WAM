@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 704" role="img" aria-labelledby="streamingwam-method-title streamingwam-method-desc">
 <title id="streamingwam-method-title">Streaming-WAM streaming overview, temporal overlap, and action-conditioned attention</title>
-<desc id="streamingwam-method-desc">Consecutive Stream Updates overlap continuous robot execution. Shared actions enter both the fixed action prefix and an independent condition stream. The cross-chunk matrix is a conceptual overview, not an exact implementation mask. Its two highlighted gold cells lead to a condition-path detail: known condition queries read z0 and known slots, while unknown condition queries read z0 and all condition slots. For z1, visual attention and condition attention are separately normalized and then added. The complete policy routing is omitted from this detail.</desc>
+<desc id="streamingwam-method-desc">Consecutive Stream Updates overlap continuous robot execution. Committed actions enter both the fixed action prefix and an independent condition stream. The cross-chunk matrix is a conceptual overview, not an exact implementation mask. Its two highlighted gold cells lead to a condition-path detail: known condition queries read z0 and known slots, while unknown condition queries read z0 and all condition slots. For z1, visual attention and condition attention are separately normalized and then added. The complete policy routing is omitted from this detail.</desc>
 <defs>
 <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
 <path d="M0 0 L8 4 L0 8 Z" fill="#56605b"/>
@@ -135,7 +135,7 @@ text{font-family:Calibri,sans-serif!important}
 <rect x="138" y="408" width="162" height="38" id="inset-a0-before" rx="3" fill="#dcece7" stroke="#397c73"/>
 <text class="small box-text" x="219" y="432">executed actions</text>
 <rect x="300" y="408" width="135" height="38" id="inset-a0-overlap" rx="3" fill="#f2dfad" stroke="#a97920"/>
-<text class="gold-label box-text" x="367.5" y="432">shared actions</text>
+<text class="gold-label box-text" x="367.5" y="432" style="letter-spacing:-0.65px">committed actions</text>
 <rect x="435" y="408" width="135" height="38" id="inset-a0-remaining" rx="3" fill="#f1f2f0" stroke="#b6bbb8"/>
 <text class="small box-text" x="502.5" y="432" transform="translate(502.5 0) scale(0.90 1) translate(-502.5 0)">unexecuted actions</text>
 <line id="inset-observation" x1="300" y1="392" x2="300" y2="452" stroke="#56605b" stroke-width="1.2"/>
@@ -169,7 +169,7 @@ text{font-family:Calibri,sans-serif!important}
 
 <text class="mono" x="110" y="666.58">Aₜ₊₁</text>
 <rect x="300" y="640.58" width="135" height="42" id="inset-a1-action-prefix" rx="3" fill="#f2dfad" stroke="#a97920"/>
-<text class="gold-label box-text" x="367.5" y="666.58">shared actions</text>
+<text class="gold-label box-text" x="367.5" y="666.58" style="letter-spacing:-0.65px">committed actions</text>
 <rect x="435" y="640.58" width="405" height="42" id="inset-a1-postfix" rx="3" fill="#dcece7" stroke="#397c73"/>
 <text class="small box-text" x="637.5" y="666.58">postfix actions</text>
 </g>
