@@ -127,7 +127,7 @@ text{font-family:Calibri,sans-serif!important}
 <rect x="58" y="345" width="1462" height="355" id="detail-inset-frame" rx="5" fill="#fffefa" stroke="#9ca39f" stroke-width="1.1"/>
 <rect x="86" y="362" width="761" height="325" id="temporal-overlap-panel" fill="none"/>
 <rect x="918" y="362" width="582" height="325" id="attention-panel" fill="none"/>
-<line id="inset-divider" x1="895" y1="368" x2="895" y2="682" stroke="#d4d8d5" stroke-width="1"/>
+<line id="inset-divider" x1="883" y1="376" x2="883" y2="674" stroke="#d4d8d5" stroke-width="1"/>
 <text class="section" x="90" y="382">Temporal overlap</text>
 <text class="time" x="796" y="382">t → t + 1</text>
 <g id="temporal-overlap-layout">
@@ -351,8 +351,8 @@ text{font-family:Calibri,sans-serif!important}
 <path id="condition-path-leader" d="M1070 584 V558 H1226" fill="none" stroke="#a66f12" stroke-width="1.25" stroke-dasharray="4 4"/>
 </g>
 <g id="condition-path-detail" aria-labelledby="condition-path-detail-title">
-<rect id="condition-path-detail-frame" x="1226" y="403" width="272" height="284.3" rx="5" fill="#fffdfa" stroke="#a66f12" stroke-width="1.1" stroke-dasharray="5 4"/>
-<text id="condition-path-detail-title" class="section" x="1240" y="424" style="font-size:16px">Condition-path detail</text>
+<rect id="condition-path-detail-frame" x="1226" y="425" width="272" height="262.3" rx="5" fill="#fffdfa" stroke="#a66f12" stroke-width="1.1" stroke-dasharray="5 4"/>
+<text id="condition-path-detail-title" class="section" x="1232" y="414" style="font-size:16px">Action conditioning detail</text>
 <g id="condition-routing-detail" transform="translate(-24 -14)">
 <title>Condition-query routing: rows CK and CU; keys z0, CK and CU. One means allowed and zero means masked. CK reads z0 and CK; CU reads z0, CK and CU. Blue cells denote visual context, pink cells denote known-slot context, and the hatched CU-to-CU cell is allowed unknown-slot context, not a masked connection. This is a condition-stream submatrix, not the complete three-stream mask.</title>
 <text class="attention-token" x="1342" y="459" style="font-size:15px">Z₀</text>
