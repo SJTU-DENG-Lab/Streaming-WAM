@@ -13,7 +13,7 @@ robot control.** Instead of waiting at each chunk boundary, the robot continues
 executing its current action chunk while a Stream Update prepares the next video
 and action chunks in the background.
 
-An action-conditioned World-Action Model uses shared actions to condition the
+An action-conditioned World-Action Model uses committed actions ($A_c$) to condition the
 next visual prediction, keeping the predicted future aligned with the motion
 already underway and producing smoother transitions between consecutive chunks.
 

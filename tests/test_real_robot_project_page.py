@@ -16,6 +16,33 @@ STREAMING_MANIFEST = ROOT / "docs" / "assets" / "real-robot" / "streaming-wam.js
 PROMO_BUILDER = ROOT / "docs" / "video" / "build_streamingwam_promo.py"
 
 
+def test_action_prefix_terminology_is_consistent_across_blog_and_readme() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    readme = README.read_text(encoding="utf-8")
+
+    for content in (page, readme):
+        assert "committed actions" in content.lower()
+        for stale in ("shared actions", "shared-action", "shared slots", "shared-slot"):
+            assert stale not in content.lower()
+        for stale in ("Aₛ", "A<sub>s</sub>", "A sub s", "$A_s$"):
+            assert stale not in content
+    assert "committed actions ($A_c$)" in readme
+    assert '<span>A<sub>c</sub></span>' in page
+    assert "Shared-DiT" in readme  # Architecture name, not action-prefix terminology.
+
+
+def test_condition_slots_are_distinct_from_policy_prefix_and_postfix() -> None:
+    page = PAGE.read_text(encoding="utf-8")
+    paragraph = page.split("Condition slots give the attention route", 1)[1].split("</p>", 1)[0]
+
+    for symbol in ("C<sub>K</sub>", "C<sub>U</sub>", "A<sub>c</sub>", "A<sub>p</sub>"):
+        assert symbol in paragraph
+    assert "fixed committed prefix and predicted postfix" in paragraph
+    assert "not copied previous-chunk actions" in paragraph
+    assert "the two attention outputs are added" in paragraph
+    assert "denotes the unknown placeholder slots" not in paragraph
+
+
 def test_real_robot_joint_metrics_and_speedups_are_consistent() -> None:
     page = PAGE.read_text(encoding="utf-8")
     readme = README.read_text(encoding="utf-8")
