@@ -285,7 +285,7 @@ class SharedDiTWAM(WAMModel):
                 action_timestep=t_action,
                 state=state,
                 context_mask=context_mask,
-                clean_video=video_latents,
+                clean_video=clean_video,
                 state_is_pad=state_is_pad,
             )
             if i < int(num_inference_steps):
