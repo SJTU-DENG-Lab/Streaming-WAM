@@ -1,7 +1,8 @@
 <div align="center">
   <h1>Streaming-WAM</h1>
-  <h3>Streaming Your World-Action Model for Real-Time Robot Manipulation.</h3>
+  <h3>Action-Conditioned World-Action Model for Asynchronous Robot Manipulation</h3>
 
+  <a href="https://arxiv.org/abs/2609.28927"><img src="https://img.shields.io/badge/arXiv-2609.28927-b31b1b?logo=arxiv" alt="arXiv Paper"></a>
   <a href="https://sjtu-deng-lab.github.io/Streaming-WAM/"><img src="https://img.shields.io/badge/Project-Page-087D70?logo=githubpages&logoColor=white" alt="Project Page"></a>
   <a href="https://github.com/SJTU-DENG-Lab/Streaming-WAM"><img src="https://img.shields.io/badge/GitHub-Code-111827?logo=github" alt="GitHub Code"></a>
   <a href="https://huggingface.co/SJTU-DENG-Lab/Streaming-WAM"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Checkpoint-FFD21E" alt="Hugging Face Checkpoint"></a>
@@ -38,7 +39,7 @@ streaming world-action prediction.
 | LIBERO and RoboTwin recipes | ✅ Available in this repository |
 | FastWAM-Joint-CD checkpoint | ✅ [Available on Hugging Face](https://huggingface.co/SJTU-DENG-Lab/Streaming-WAM) |
 | Streaming-WAM checkpoint | ✅ [Available on Hugging Face](https://huggingface.co/SJTU-DENG-Lab/Streaming-WAM) |
-| Technical report | ⏳ Coming soon |
+| Technical report | ✅ [Available on arXiv](https://arxiv.org/abs/2609.28927) |
 
 ## Quick start: accelerated Streaming-WAM on LIBERO
 
@@ -209,17 +210,17 @@ examples/
 
 ## Citation
 
-The arXiv entry is not public yet. For now, please cite the
-[project page](https://sjtu-deng-lab.github.io/Streaming-WAM/):
+If you find this work useful, please cite our [paper](https://arxiv.org/abs/2609.28927):
 
 ```bibtex
 @misc{huang2026streamingwam,
-  title        = {Streaming-WAM: Streaming Your World-Action Model for Real-Time Robot Manipulation},
-  author       = {Xuyao Huang and Yixuan Wang and Zengyao Ye and Haoran Wen and Zhijie Deng},
-  year         = {2026},
-  howpublished = {Project page},
-  organization = {Shanghai Jiao Tong University and Li Auto Inc.},
-  url          = {https://sjtu-deng-lab.github.io/Streaming-WAM/}
+  title         = {Streaming-WAM: Action-Conditioned World-Action Model for Asynchronous Robot Manipulation},
+  author        = {Xuyao Huang and Yixuan Wang and Zengyao Ye and Boyuan Zhao and Chenyang Yu and Haoran Wen and Zhijie Deng},
+  year          = {2026},
+  eprint        = {2609.28927},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.28927}
 }
 ```
 
